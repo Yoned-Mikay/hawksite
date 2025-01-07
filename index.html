@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <meta property="og:image" content="images/adjusticon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+    <script src="js/index.js"></script>
+    <title>Talk Tuah MC</title>
+    <style>
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #273042;
+            color: #b4c6ee;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .popup h1 {
+            font-size: 1.5rem;
+            color: #84a3e7;
+            margin: 0;
+        }
+
+        .popup button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #84a3e7;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .popup button:hover {
+            background-color: rgb(143, 162, 202);
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+    </style>
+</head> 
+
+<body>
+    <nav>
+        <div class="logo">Talk Tuah MC</div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Talk Tuah MC</h1>
+        <p>Talk Tuah MC is a Minecraft server dedicated to pushing the limits of Minecraft survival. As of now, we are using a whitelist to prevent unwanted users.</p>
+    </section>
+
+    <section class="buttons">
+        <a href="#" id="openPopup" class="button">Server IP</a>
+        <a href="https://www.google.com/" class="learn-more">Leave Site</a>
+    </section>
+
+    <div id="overlay"></div>
+
+    <div class="popup" id="popup">
+        <h1>play.talktuah.top</h1>
+        <button id="closePopup">Close</button>
+    </div>
+
+    <script>
+        const openPopupButton = document.getElementById('openPopup');
+        const closePopupButton = document.getElementById('closePopup');
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+
+        openPopupButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+
+        closePopupButton.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+        overlay.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
